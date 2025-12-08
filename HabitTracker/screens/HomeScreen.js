@@ -49,7 +49,6 @@ export default function HomeScreen({ navigation }) {
       setHabits(data);
     });
 
-    // Reset daily completions on load
     resetDailyCompletions();
 
     return () => unsubscribe();
