@@ -60,16 +60,11 @@ export default function HomeScreen({ navigation }) {
     const goal = habit.goalPerDay || 1;
     const current = habit.completionsToday || 0;
 
-    if (current >= goal) {
-      Alert.alert("Daily goal reached!", "You've completed this habit for today.");
-      return;
-    }
-
     let completionsToday = current + 1;
     let newStreak = habit.streak || 0;
 
     if (habit.lastCompleted === today) {
-      newStreak = habit.streak; // streak unchanged
+      newStreak = habit.streak;
     } else {
       if (habit.lastCompleted) {
         const lastDate = new Date(habit.lastCompleted);
